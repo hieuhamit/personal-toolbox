@@ -6,7 +6,7 @@
     "users": [
       {
         "groups": [
-          "wheel",
+          "wheel"
         ],
         "name": "sergei",
         "sshAuthorizedKeys": [
