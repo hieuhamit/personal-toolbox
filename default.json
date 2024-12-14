@@ -6,10 +6,7 @@
     "users": [
       {
         "groups": [
-          "docker",
-          "marketing",
           "wheel",
-          "sudo"
         ],
         "name": "sergei",
         "sshAuthorizedKeys": [
