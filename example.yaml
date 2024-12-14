@@ -1,0 +1,22 @@
+variant: fcos
+version: 1.5.0
+passwd:
+  users:
+    - name: sergei
+      groups:
+          - docker
+          - marketing
+          - wheel
+          - sudo
+      ssh_authorized_keys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDXL+DpPmZKlvUqSmE77UkqV5dbtyDQeTpLaPfXlhAWsw1olcdJT5yMTCnuU45tqb112o6xV/ND8NCCFCJCu8RETVUvtD977EZb2jebnM+V2R6a1LKOd/jTVUMVTbJwZk+JIktK9mCix+Ol8iOy2QoCWJpiAbAe2YMY7ILYaQFMDfBRpViOArDuiYNsDUQEOWNWyKbma3g1vOrLO7y4qYhEDJfRPP4lmVWC/VlLlKx7L/OysEAT5DIpu56igkQ0DJxeOcW8Vq5SEO5iyUAbKRXEzS0OfJV+B+9OnKM+jQ6VG3Sm7n69xyJCwbD2x5CoUMVCbsZCY6twqVgT6XWLOBe0Y+yjXckH9MOypuOvvM7boZpLu45Q1GVkccrDXQFb+Z6L92FK2A7v4N9hQF0nX8ikPRI8EXUPX8cjC584gATmaAT1TfInSFnq1jbQXGpOXLSBhj6Wf6+nPg+6GUeEfpvI33RuBBq7+IITvRTCNR4IHCWXSXbkKk8VlnhwSnJQyvc= bluehat@dabadinux
+storage:
+  files:
+    - path: /etc/ssh/sshd_config.d/20-enable-passwords.conf
+      mode: 0644
+      contents:
+        inline: |
+          # Fedora CoreOS disables SSH password login by default.
+          # Enable it.
+          # This file must sort before 40-disable-passwords.conf.
+          PasswordAuthentication yes
